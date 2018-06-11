@@ -1,4 +1,4 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.Login;
+package com.mahmoud.mohammed.qwesysandroidtask.features.Login.view;
 
 import com.mahmoud.mohammed.qwesysandroidtask.base.BaseView;
 

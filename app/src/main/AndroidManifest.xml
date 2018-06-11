@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.Login.LoginActivity">
+        <activity android:name=".features.Login.view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

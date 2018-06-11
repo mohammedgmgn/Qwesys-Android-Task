@@ -1,6 +1,5 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.Login;
+package com.mahmoud.mohammed.qwesysandroidtask.features.Login.presenter;
 
-import android.content.Context;
 import android.content.Intent;
 
 import com.facebook.CallbackManager;
@@ -9,17 +8,14 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.mahmoud.mohammed.qwesysandroidtask.base.BaseView;
+import com.mahmoud.mohammed.qwesysandroidtask.features.Login.view.LoginView;
 
-import java.util.Arrays;
-
-public class LoginPresenterImpl implements LoginPresenter, FacebookCallback<LoginResult> {
+public class LoginPresenter implements LoginPresenterInterface, FacebookCallback<LoginResult> {
     CallbackManager callbackManager;
 
     private LoginView view;
-    private Context mContext;
 
-    public LoginPresenterImpl(BaseView view, Context context) {
-        mContext = context;
+    public LoginPresenter(BaseView view) {
         callbackManager = CallbackManager.Factory.create();
         setView(view);
     }
@@ -49,7 +45,7 @@ public class LoginPresenterImpl implements LoginPresenter, FacebookCallback<Logi
 
     @Override
     public void onCancel() {
-
+        view.hideProgress();
     }
 
     @Override
