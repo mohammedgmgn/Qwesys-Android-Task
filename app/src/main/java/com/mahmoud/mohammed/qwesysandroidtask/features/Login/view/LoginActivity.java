@@ -9,7 +9,8 @@ import android.widget.Toast;
 
 import com.facebook.login.widget.LoginButton;
 import com.mahmoud.mohammed.qwesysandroidtask.R;
-import com.mahmoud.mohammed.qwesysandroidtask.features.CitiesList.CitiesListActivity;
+import com.mahmoud.mohammed.qwesysandroidtask.features.CitiesList.ListingCitiesActivity;
+import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
 import com.mahmoud.mohammed.qwesysandroidtask.features.Login.presenter.LoginPresenter;
 
 import java.util.Arrays;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity implements LoginView {
+public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView {
     private static final String EMAIL = "email";
     @BindView(R.id.login_button)
     LoginButton facebookBtn;
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter=new LoginPresenter(this);
+        presenter=new LoginPresenter(this,this);
         ButterKnife.bind(this);
         facebookBtn.setReadPermissions(Arrays.asList(EMAIL));
         facebookBtn.setOnClickListener(view -> {
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void navigateToHomeListActivity() {
-        startActivity(new Intent(this, CitiesListActivity.class));
+        startActivity(new Intent(this, ListingCitiesActivity.class));
     }
 
     @Override

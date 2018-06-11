@@ -1,22 +1,30 @@
 package com.mahmoud.mohammed.qwesysandroidtask.features.Login.presenter;
+import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
 
+import android.app.Activity;
 import android.content.Intent;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.mahmoud.mohammed.qwesysandroidtask.base.BaseView;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.view.LoginView;
+import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
+import com.mahmoud.mohammed.qwesysandroidtask.features.Login.view.LoginActivity;
 
-public class LoginPresenter implements LoginPresenterInterface, FacebookCallback<LoginResult> {
+import java.util.Arrays;
+
+public class LoginPresenter implements LoginContract.LoginPresenterInterface, FacebookCallback<LoginResult> {
     CallbackManager callbackManager;
 
-    private LoginView view;
+    private LoginContract.LoginView view;
+    private LoginActivity activity;
 
-    public LoginPresenter(BaseView view) {
+    public LoginPresenter(BaseView view, Activity activity) {
         callbackManager = CallbackManager.Factory.create();
+        this.activity = (LoginActivity) activity;
         setView(view);
     }
 
@@ -33,7 +41,7 @@ public class LoginPresenter implements LoginPresenterInterface, FacebookCallback
 
     @Override
     public void setView(BaseView view) {
-        this.view = (LoginView) view;
+        this.view = (LoginContract.LoginView) view;
 
     }
 
@@ -45,11 +53,16 @@ public class LoginPresenter implements LoginPresenterInterface, FacebookCallback
 
     @Override
     public void onCancel() {
-        view.hideProgress();
+        if (AccessToken.getCurrentAccessToken() == null) {
+            return; // already logged out
+        }
+
     }
 
     @Override
     public void onError(FacebookException error) {
-        view.showErrMsg(error.getMessage());
+        AccessToken.setCurrentAccessToken(null);
+        LoginManager.getInstance().logInWithReadPermissions(activity, Arrays.asList("user_posts,user_friends"));
+        view.onLoginFail(error.getMessage());
     }
 }
