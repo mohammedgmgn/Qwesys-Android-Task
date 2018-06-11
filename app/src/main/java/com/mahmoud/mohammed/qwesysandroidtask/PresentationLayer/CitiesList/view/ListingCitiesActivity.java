@@ -1,4 +1,4 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.CitiesList;
+package com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.view;
 
 import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;

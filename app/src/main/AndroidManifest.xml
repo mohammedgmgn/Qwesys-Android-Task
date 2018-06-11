@@ -11,15 +11,15 @@
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.Login.view.LoginActivity">
+        <activity android:name=".PresentationLayer.Login.view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.CitiesList.ListingCitiesActivity" />
-        <activity android:name=".features.WeatherResult.WeatherResultActivity"></activity>
+        <activity android:name=".PresentationLayer.CitiesList.view.ListingCitiesActivity" />
+        <activity android:name=".PresentationLayer.WeatherResult.WeatherResultActivity"></activity>
 
 
 

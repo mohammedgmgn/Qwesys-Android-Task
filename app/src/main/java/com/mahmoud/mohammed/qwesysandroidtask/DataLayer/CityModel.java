@@ -2,6 +2,7 @@ package com.mahmoud.mohammed.qwesysandroidtask.DataLayer;
 
 import java.util.UUID;
 
+import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -24,5 +25,10 @@ public class CityModel extends RealmObject {
 
     public void setCityName(String cityName) {
         CityName = cityName;
+    }
+
+    public void saveCityInLocalDb(Realm.Transaction.OnSuccess onSuccess, Realm.Transaction.OnError onError) {
+
+        RealmQueries.saveCityData(this,onSuccess,onError);
     }
 }

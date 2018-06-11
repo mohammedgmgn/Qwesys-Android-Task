@@ -1,5 +1,5 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.Login.presenter;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
+package com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.presenter;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.LoginContract;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.mahmoud.mohammed.qwesysandroidtask.base.BaseView;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.view.LoginActivity;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.LoginContract;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.view.LoginActivity;
 
 import java.util.Arrays;
 

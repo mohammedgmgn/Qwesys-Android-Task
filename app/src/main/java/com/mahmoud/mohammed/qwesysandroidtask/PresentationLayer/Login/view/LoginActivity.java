@@ -1,4 +1,4 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.Login.view;
+package com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 import com.facebook.login.widget.LoginButton;
 import com.mahmoud.mohammed.qwesysandroidtask.R;
-import com.mahmoud.mohammed.qwesysandroidtask.features.CitiesList.ListingCitiesActivity;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.LoginContract;
-import com.mahmoud.mohammed.qwesysandroidtask.features.Login.presenter.LoginPresenter;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.view.ListingCitiesActivity;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.LoginContract;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.Login.presenter.LoginPresenter;
 
 import java.util.Arrays;
 

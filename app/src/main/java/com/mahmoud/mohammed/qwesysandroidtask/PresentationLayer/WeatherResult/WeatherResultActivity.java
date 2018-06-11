@@ -1,4 +1,4 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features.WeatherResult;
+package com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.WeatherResult;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
