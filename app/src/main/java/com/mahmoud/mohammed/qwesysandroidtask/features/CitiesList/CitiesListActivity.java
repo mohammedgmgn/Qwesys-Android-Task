@@ -1,15 +1,15 @@
-package com.mahmoud.mohammed.qwesysandroidtask.features;
+package com.mahmoud.mohammed.qwesysandroidtask.features.CitiesList;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.mahmoud.mohammed.qwesysandroidtask.R;
 
-public class WeatherResultActivity extends AppCompatActivity {
+public class CitiesListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather_result_screen);
+        setContentView(R.layout.activity_cities_list);
     }
 }

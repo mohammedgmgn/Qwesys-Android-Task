@@ -16,7 +16,6 @@ public class BaseApplication extends Application {
         super.onCreate();
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
-
         initRealm();
     }
 
