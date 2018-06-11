@@ -46,6 +46,5 @@ dependencies {
     implementation 'com.uphyca:stetho_realm:2.0.0'
 
 
-
 }
 apply plugin: 'realm-android'
