@@ -24,6 +24,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+repositories {
+    maven {
+        url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -38,8 +43,9 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
+    implementation 'com.uphyca:stetho_realm:2.0.0'
 
 
 
 }
+apply plugin: 'realm-android'
