@@ -3,9 +3,9 @@ package com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.pres
 import android.app.Activity;
 
 import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Callbacks;
-import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.CityModel;
-import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.DataRepository;
-import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.ListingCitiesContracts;
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.Model.CityModel;
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.LocalDataRepository;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.ListingCitiesContract;
 import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.view.ListingCitiesActivity;
 import com.mahmoud.mohammed.qwesysandroidtask.base.BaseView;
 
@@ -14,23 +14,23 @@ import java.util.List;
 
 import io.realm.Realm;
 
-public class ListingCitiesPresenter implements ListingCitiesContracts.CitiesPresenterInterface {
-    ListingCitiesContracts.ListCitiesView listingCitiesView;
+public class ListingCitiesPresenter implements ListingCitiesContract.CitiesPresenterInterface {
+    ListingCitiesContract.ListCitiesView listingCitiesView;
     CityModel mCityModel;
-    DataRepository mDataRepo;
+    LocalDataRepository mDataRepo;
     ListingCitiesActivity activity;
     List<CityModel> citiesModelList;
 
     public ListingCitiesPresenter(BaseView baseView, Activity activity) {
         this.activity = (ListingCitiesActivity) activity;
         setView(baseView);
-        mDataRepo = new DataRepository();
+        mDataRepo = new LocalDataRepository();
         citiesModelList = new ArrayList<>();
     }
 
     @Override
     public void setView(BaseView view) {
-        listingCitiesView = (ListingCitiesContracts.ListCitiesView) view;
+        listingCitiesView = (ListingCitiesContract.ListCitiesView) view;
     }
 
     @Override
@@ -61,7 +61,6 @@ public class ListingCitiesPresenter implements ListingCitiesContracts.CitiesPres
                 listingCitiesView.hideProgress();
                 listingCitiesView.onGetCitiesSuccess(result);
             }
-
             @Override
             public void onError(String error) {
                 listingCitiesView.hideProgress();

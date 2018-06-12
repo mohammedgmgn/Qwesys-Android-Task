@@ -2,6 +2,8 @@ package com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local;
 
 import android.webkit.ValueCallback;
 
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.Model.CityModel;
+
 import java.util.ArrayList;
 import java.util.List;
 

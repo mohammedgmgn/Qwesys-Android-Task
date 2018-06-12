@@ -18,11 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.CityModel;
-import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.ListingCitiesContracts;
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.Model.CityModel;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.ListingCitiesContract;
 import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.adapter.ListingCitiesAdapter;
 import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.presenter.ListingCitiesPresenter;
-import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.WeatherResult.WeatherResultActivity;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.WeatherResult.view.WeatherResultActivity;
 import com.mahmoud.mohammed.qwesysandroidtask.R;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ListingCitiesActivity extends AppCompatActivity implements ListingCitiesContracts.ListCitiesView {
+public class ListingCitiesActivity extends AppCompatActivity implements ListingCitiesContract.ListCitiesView {
     @BindView(R.id.add_city_btn_id)
     FloatingActionButton addNewCityBtn;
     @BindView(R.id.cities_rec_view)

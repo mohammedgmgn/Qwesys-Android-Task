@@ -1,7 +1,9 @@
-package com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local;
+package com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.RealmQueries;
 
 import java.util.UUID;
 

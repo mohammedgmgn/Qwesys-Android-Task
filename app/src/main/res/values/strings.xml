@@ -12,6 +12,10 @@
     <string name="cities_list_title">Cities</string>
     <string name="faill_save_error">Failled To Save</string>
     <string name="city_obj_key">CityKey</string>
+    <string name="api_key" translatable="false">bd5e378503939ddaee76f12ad7a97608</string>
+    <string name="sky">Rainy</string>
+    <string name="max">Max</string>
+    <string name="min">Min</string>
 
 
 </resources>

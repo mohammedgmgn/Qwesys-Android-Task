@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.CityModel;
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.Model.CityModel;
 import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.presenter.ListingCitiesPresenter;
 import com.mahmoud.mohammed.qwesysandroidtask.R;
 
