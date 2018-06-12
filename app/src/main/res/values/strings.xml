@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">QwesysAndroidTask</string>
-    <string name="facebook_app_id">227051174693739</string>
+    <string name="facebook_app_id">161846604560352</string>
     <string name="fb_login_protocol_scheme">fb161846604560352</string>
     <string name="NO_Internet_Error">Weak Connection</string>
     <string name="add_new_city">Add New City</string>
