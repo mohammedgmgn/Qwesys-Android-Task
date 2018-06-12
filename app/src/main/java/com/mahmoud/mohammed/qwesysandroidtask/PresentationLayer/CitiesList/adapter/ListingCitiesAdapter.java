@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.CityModel;
+import com.mahmoud.mohammed.qwesysandroidtask.DataLayer.Local.CityModel;
+import com.mahmoud.mohammed.qwesysandroidtask.PresentationLayer.CitiesList.presenter.ListingCitiesPresenter;
 import com.mahmoud.mohammed.qwesysandroidtask.R;
 
 import java.util.List;
@@ -18,10 +19,12 @@ import butterknife.ButterKnife;
 public class ListingCitiesAdapter extends RecyclerView.Adapter<ListingCitiesAdapter.CitiesListHolder> {
     private final Context context;
     private List<CityModel> items;
+    private ListingCitiesPresenter presenter;
 
-    public ListingCitiesAdapter(List<CityModel> items, Context context) {
+    public ListingCitiesAdapter(List<CityModel> items, Context context, ListingCitiesPresenter presenter) {
         this.items = items;
         this.context = context;
+        this.presenter = presenter;
     }
 
     @Override
@@ -54,14 +57,21 @@ public class ListingCitiesAdapter extends RecyclerView.Adapter<ListingCitiesAdap
         return items.size();
     }
 
-    class CitiesListHolder extends RecyclerView.ViewHolder {
+
+    class CitiesListHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.city_bane_tv)
         TextView cityNameTv;
 
         public CitiesListHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View view) {
+            presenter.onItemInteraction(getAdapterPosition());
         }
     }
 }
